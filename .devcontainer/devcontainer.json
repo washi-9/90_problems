@@ -1,0 +1,21 @@
+{
+    "name": "C++ Competition Environment",
+    "build": {
+        "dockerfile": "Dockerfile"
+    },
+    // コンテナ内で自動インストールする拡張機能
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "ms-vscode.cpptools",
+                "formulahendry.code-runner"
+            ]
+        }
+    },
+    // コンテナ内での設定（Mac/Win共通）
+    "settings": {
+        "terminal.integrated.shell.linux": "/bin/bash"
+    },
+    // コンテナ作成後に実行するコマンド
+    "postCreateCommand": "g++ --version"
+}
